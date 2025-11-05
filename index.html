@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄罗斯方块游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>俄罗斯方块</h1>
+        <div class="game-area">
+            <div class="game-info">
+                <div class="score-board">
+                    <div>分数: <span id="score">0</span></div>
+                    <div>等级: <span id="level">1</span></div>
+                    <div>行数: <span id="lines">0</span></div>
+                </div>
+                <div class="next-piece">
+                    <div>下一个:</div>
+                    <canvas id="next-piece-canvas" width="80" height="80"></canvas>
+                </div>
+                <div class="controls">
+                    <div>控制说明:</div>
+                    <div>← → : 左右移动</div>
+                    <div>↑ : 旋转</div>
+                    <div>↓ : 加速下落</div>
+                    <div>空格 : 直接落下</div>
+                    <div>P : 暂停/继续</div>
+                </div>
+                <button id="start-btn">开始游戏</button>
+                <button id="pause-btn">暂停</button>
+                <button id="reset-btn">重新开始</button>
+                <button id="debug-btn" style="display: none;">调试面板</button>
+                <div class="leaderboard">
+                    <div>排行榜</div>
+                    <div id="leaderboard-list">
+                        <div>暂无记录</div>
+                    </div>
+                </div>
+            </div>
+            <div class="game-board">
+                <canvas id="tetris" width="300" height="600"></canvas>
+            </div>
+        </div>
+        
+        <!-- 移动端触摸控制 -->
+        <div class="mobile-controls">
+            <div class="control-row">
+                <button class="control-btn" id="rotate-btn">旋转</button>
+            </div>
+            <div class="control-row">
+                <button class="control-btn" id="left-btn">←</button>
+                <button class="control-btn" id="down-btn">↓</button>
+                <button class="control-btn" id="right-btn">→</button>
+            </div>
+            <div class="control-row">
+                <button class="control-btn" id="hard-drop-btn">直接落下</button>
+            </div>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html>
